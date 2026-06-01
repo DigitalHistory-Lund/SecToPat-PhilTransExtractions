@@ -49,6 +49,23 @@ code { background: #eee; padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.
     original article text.
   </p>
 
+  <h2>Prompt</h2>
+  <p>Each article was passed to the LLM with the following prompt. Structured output was enforced via JSON schema using the Ollama API.</p>
+  <pre style="background:#f0f0f0;padding:0.75rem 1rem;border-radius:4px;font-size:0.8rem;line-height:1.55;white-space:pre-wrap;margin-bottom:0.75rem">You are analysing an article from the Philosophical Transactions of the Royal Society (17th–19th century). Answer three questions:
+
+1. is_experiment: Does this article describe one or more experiments or systematic observations? Answer "yes", "no", or "unsure".
+
+2. locations: List every spatial location where an experiment or observation took place. For each, provide:
+   - place: the immediate setting at room or building scale (e.g. "private study", "ship's cabin", "kitchen"); null if not mentioned
+   - geography: named place at city, region, country, estate, or vessel scale (e.g. "London", "aboard HMS Endeavour"); null if not mentioned
+   - detail: specific spatial detail within the place (e.g. "by the south window", "in a dark corner"); null if not mentioned
+Do not include apparatus or containers as locations. Return an empty list if no spatial setting is mentioned.
+
+3. participants: List every person named in the article who conducted, observed, or contributed to the experiment or observation. For each, provide:
+   - name: the person's name as it appears in the text
+   - role: their role if stated (e.g. "experimenter", "observer", "subject", "correspondent", "author"); null if not clear
+Return an empty list if no individuals are named.</pre>
+
   <h2>Repository</h2>
   <p>
     Source code and data:
