@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20502387.svg)](https://doi.org/10.5281/zenodo.20502387)
+
 # Philosophical Transactions Extractions Viewer
 
 An interactive browser for LLM-extracted structured data from articles in the
